@@ -17,10 +17,12 @@ def register():
                 if len(name) != 0 and len(pas) != 0 and c_pas == pas:
                     print("注册成功，去登录吧")
                     UserList.append([name,pas])
+                    login()
         else:       
             for count in UserList:
                 if name in count:
-                    print("用户名已存在，无法进行重新注册")
+                    print("用户名已存在，注册失败，请重新注册")
+                    register()
 # 登录
 def login():
     print(UserList)
@@ -31,9 +33,12 @@ def login():
             print("登录成功")
             break
         else:
-            print("登录失败")
+            print("登录失败，请重新登录！")
+            login()
 #修改用户信息
-
+#1.首先需要登录，修改用户名和修改密码只能单个存在，
+# def Xiugai_User():
+    
 
 #判断选择的类型
 def xuanze():
