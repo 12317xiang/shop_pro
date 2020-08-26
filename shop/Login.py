@@ -13,7 +13,10 @@ def register():
         login()
     else:
         if len(name) == 0 or len(pas) == 0 or c_pas != pas:
-                print("注册失败")
+                print("注册失败,请重新注册")
+                if len(name) != 0 and len(pas) != 0 and c_pas == pas:
+                    print("注册成功，去登录吧")
+                    UserList.append([name,pas])
         else:       
             for count in UserList:
                 if name in count:
