@@ -41,7 +41,6 @@ def login():
 #修改用户信息
 #1.首先需要登录，修改用户名和修改密码只能单个存在，
 def Xiugai_User():
-    login()
     text = input("请选择你需要修改的用户信息! （1修改用户名   2.修改密码）")
     for count in UserList:
         if text == "1":
@@ -53,6 +52,9 @@ def Xiugai_User():
             if len(text_new_name) != 0:
                 print('用户名修改成功')
                 UserList.append([text_new_name,login().pas])
+                print("__________：",text_new_name)
+                print(UserList)
+                break
             else:
                 print("新用户名不能为空")
         elif text == "2":
@@ -80,14 +82,14 @@ def xuanze():
         return
     elif aa == '2':
         login()
-    elif aa == 3:
+    elif aa == '3':
         print("退出登录成功,欢迎回到登录页面")
         shouye = input("请选择你需要操作的选项！(1:注册   2:登录)  ：")
-        if shouye == 1:
+        if shouye == '1':
             register()
-        elif shouye == 2:
+        elif shouye == '2':
             login()
-    elif aa == 4:
+    elif aa == '4':
         Xiugai_User()
     else:
         print("输入的类型有误")
